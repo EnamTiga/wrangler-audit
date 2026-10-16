@@ -40,6 +40,28 @@ Exit codes: `0` clean or warnings only, `1` when any `error` finding exists, `2`
 
 Fail the pipeline on errors; warnings are informational.
 
+## GitHub Action
+
+One step in your workflow:
+
+```yaml
+- name: Audit wrangler config
+  uses: EnamTiga/wrangler-audit@v1
+```
+
+Options:
+
+```yaml
+- name: Audit wrangler config
+  uses: EnamTiga/wrangler-audit@v1
+  with:
+    path: ./my-worker # directory with wrangler.toml (default: .)
+    json: "true" # machine-readable output (default: "false")
+    version: 0.1.1 # npm version to run (default: latest)
+```
+
+The step fails when the audit reports an `error` finding.
+
 ## Rules
 
 | ID | Severity | What it checks |
