@@ -1,0 +1,33 @@
+name: "Wrangler Audit"
+description: "Security and posture audit for Cloudflare Workers configuration"
+branding:
+  icon: "shield"
+  color: "blue"
+inputs:
+  path:
+    description: "Directory containing the wrangler config file to audit"
+    required: false
+    default: "."
+  json:
+    description: "Emit machine-readable JSON output"
+    required: false
+    default: "false"
+  version:
+    description: "wrangler-audit npm version to run"
+    required: false
+    default: "latest"
+runs:
+  using: "composite"
+  steps:
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: Run wrangler-audit
+      shell: bash
+      run: |
+        ARGS="${{ inputs.path }}"
+        if [ "${{ inputs.json }}" = "true" ]; then
+          ARGS="$ARGS --json"
+        fi
+        npx -y wrangler-audit@${{ inputs.version }} $ARGS
