@@ -2,7 +2,7 @@
   "name": "wrangler-audit",
   "version": "0.1.0",
   "description": "Security and posture auditor for Cloudflare Workers configuration",
-  "main": "index.js",
+  "main": "dist/index.js",
   "directories": {
     "test": "tests"
   },
@@ -11,8 +11,15 @@
     "build": "tsc",
     "start": "node ./dist/cli.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "wrangler",
+    "security",
+    "audit",
+    "cli"
+  ],
+  "author": "EnamTiga",
   "license": "MIT",
   "type": "module",
   "bin": {
@@ -25,5 +32,14 @@
   },
   "dependencies": {
     "smol-toml": "^1.9.1"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EnamTiga/wrangler-audit.git"
   }
 }
