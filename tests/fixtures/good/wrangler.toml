@@ -1,0 +1,18 @@
+name = "my-worker"
+compatibility_date = "2026-09-01"
+workers_dev = false
+
+[vars]
+PORT = "8080"
+LOG_LEVEL = "info"
+API_KEY = "changeme"
+
+[[kv_namespaces]]
+binding = "CACHE"
+id = "abc123"
+
+[env.production.vars]
+PORT = "8080"
+
+[env.staging.vars]
+PORT = "8080"

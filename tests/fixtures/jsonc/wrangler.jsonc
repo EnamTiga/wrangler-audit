@@ -1,0 +1,10 @@
+{
+  // worker name
+  "name": "jsonc-worker",
+  "compatibility_date": "2026-09-01",
+  "workers_dev": false,
+  /* block comment */
+  "vars": {
+    "PORT": "8080" // trailing comment
+  }
+}

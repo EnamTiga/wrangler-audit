@@ -1,0 +1,29 @@
+{
+  "name": "wrangler-audit",
+  "version": "0.1.0",
+  "description": "Security and posture auditor for Cloudflare Workers configuration",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "build": "tsc",
+    "start": "node ./dist/cli.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "wrangler-audit": "./dist/cli.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "dependencies": {
+    "smol-toml": "^1.9.1"
+  }
+}

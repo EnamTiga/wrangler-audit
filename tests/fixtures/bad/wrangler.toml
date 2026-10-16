@@ -1,0 +1,22 @@
+name = "my-worker"
+compatibility_date = "2023-01-15"
+workers_dev = true
+
+routes = [
+  { pattern = "example.com/*", zone_name = "example.com" }
+]
+
+[vars]
+API_SECRET = "sk-live-abc123"
+PORT = "8080"
+
+[[kv_namespaces]]
+binding = "UNUSED_KV"
+id = "abc123"
+
+[env.production.vars]
+DB_PASSWORD = "supersecret"
+API_KEY = "key-prod"
+
+[env.staging.vars]
+API_KEY = "key-staging"
